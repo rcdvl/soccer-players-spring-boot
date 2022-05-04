@@ -1,0 +1,23 @@
+databaseChangeLog:
+  - preConditions:
+
+  - changeSet:
+      id: 1
+      author: rcadaval
+      changes:
+        - createTable:
+            tableName: player
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: full_name
+                  type: varchar(250)
+                  constraints:
+                    nullable: false
+                    unique: true
